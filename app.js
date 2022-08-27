@@ -1,5 +1,5 @@
-let playerScore = "0"
-let computerScore = "0"
+let playerScore = 0
+let computerScore = 0
 const rockButton = document.getElementById("rock-button");
 const paperButton = document.getElementById("paper-button");
 const scissorsButton = document.getElementById("scissors-button");
@@ -40,6 +40,15 @@ function playGame (playerChoice) {
                 return "win";
             }
    }
+}
+
+function updateScore (playGame()) {
+    switch (playGame()) {
+        case "win":
+            ++playerScore;
+        case "lose":
+            ++computerScore;
+    }
 }
     
     
