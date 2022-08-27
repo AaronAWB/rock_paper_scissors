@@ -1,17 +1,26 @@
-//const rockButton = document.getElementById("rock-button");
-//rockButton.addEventListener("click", computerChoice());
+let playerScore = "0"
+let computerScore = "0"
+const rockButton = document.getElementById("rock-button");
+const paperButton = document.getElementById("paper-button");
+const scissorsButton = document.getElementById("scissors-button");
 
-//const paperButton = document.getElementById("paper-button");
-//paperButton.addEventListener("click", computerChoice());
-
-//const scissorsButton = document.getElementById("paper-button");
-//scissorsButton.addEventListener("click", computerChoice());
+rockButton.addEventListener ("click", playGame("rock-button"));
+paperButton.addEventListener ("click", playGame("paper-button"));
+scissorsButton.addEventListener ("clock", playGame("scissors-button"));
 
 const choices = ["rock", "paper", "scissors"];
 
-function randomChoice () {
-    const randomSelection = Math.floor(Math.random() * choices.length);
-    return choices[randomSelection]
+function computerChoice () {
+    const random = Math.floor(Math.random() * choices.length);
+    return choices[random]
 }
 
-console.log(randomChoice());
+function playGame (playerChoice) {
+   
+}
+    
+    
+    
+    
+    
+    
