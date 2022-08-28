@@ -1,57 +1,80 @@
-let playerScore = 0
-let computerScore = 0
+let playerScore = 0;
+let computerScore = 0;
+
 const rockButton = document.getElementById("rock-button");
 const paperButton = document.getElementById("paper-button");
 const scissorsButton = document.getElementById("scissors-button");
+const playerScoreCounter = document.getElementById("player-score");
+const computerScoreCounter = document.getElementById("computer-score");
+const resultDisplay = document.getElementById("result-display");
 
-rockButton.addEventListener ("click", playGame("rock"));
-paperButton.addEventListener ("click", playGame("paper"));
-scissorsButton.addEventListener ("clock", playGame("scissors"));
+rockButton.addEventListener("click", function() {
+    playGame("rock");
+});
 
-const choices = ["rock", "paper", "scissors"];
+paperButton.addEventListener("click", function() {
+    playGame("paper");
+});
 
-function computerChoice () {
+scissorsButton.addEventListener("click", function() {
+    playGame("scissors");
+});
+
+function getComputerChoice () {
+    const choices = ["rock", "paper", "scissors"];
     const random = Math.floor(Math.random() * choices.length);
     return choices[random]
 }
 
 function playGame (playerChoice) {
-   if (playerChoice === computerChoice()) return "tie";
-   switch (playerChoice) {
-        case "rock":
-            if (computerChoice() === "paper") {
-                return "lose";
+    const computerChoice = getComputerChoice();
+    if (playerChoice === computerChoice) {
+        draw(computerChoice, playerChoice);
+    } else {
+        switch (playerChoice) {
+            case "rock":
+                if (computerChoice === "paper") {
+                    lose(computerChoice, playerChoice);
+                } else {
+                    win(computerChoice, playerChoice);
+                } 
                 break;
-            } else {
-                return "win";
-            }
-        case "paper":
-            if (computerChoice() === "scissors") {
-                return "lose";
+            case "paper":
+                if (computerChoice === "scissors") {
+                    lose(computerChoice, playerChoice);
+                } else {
+                    win(computerChoice, playerChoice);
+                }
                 break;
-            } else {
-                return "win";
-            }
-        case "scissors":
-            if (computerChoice() === "rock") {
-                return "lose";
+            case "scissors":
+                if (computerChoice === "rock") {
+                    lose(computerChoice, playerChoice);
+                } else {
+                    win(computerChoice, playerChoice);
+                }
                 break;
-            } else {
-                return "win";
-            }
+        }   
    }
+  
 }
 
-function updateScore (playGame()) {
-    switch (playGame()) {
-        case "win":
-            ++playerScore;
-        case "lose":
-            ++computerScore;
-    }
+function win (computerChoice, playerChoice) {
+    ++playerScore;
+    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. You WIN!`
+    playerScoreCounter.textContent = `${playerScore}`
 }
-    
-    
+
+function lose (computerChoice, playerChoice) {
+    ++computerScore;
+    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. You LOSE!`
+    computerScoreCounter.textContent = `${computerScore}`
+}
+
+function draw (computerChoice, playerChoice) {
+    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. It's a TIE!`
+}
+
+
     
     
     

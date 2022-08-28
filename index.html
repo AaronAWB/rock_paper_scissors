@@ -9,11 +9,14 @@
 <body>
     <h1 class ="header-title">Rock, Paper, Scissors!</h1>
     <p>Current score:</p>
-    <p>(User)<span id="user-score"> 0 </span> - <span id="computer-score"> 0 </span>(Computer)</p>
+    <p>(User)<span id="player-score"></span> - <span id="computer-score"></span>(Computer)</p>
     <div class="choices">
         <button class="choice" id="rock-button">Rock</button>
-        <button class="choice" id ="paper-button">Paper</button>
-        <button class="choice" id ="scissors-button">Scissors</button>
+        <button class="choice" id="paper-button">Paper</button>
+        <button class="choice" id="scissors-button">Scissors</button>
+    </div>
+    <div class="results">
+        <p class ="result" id="result-display"></p>
     </div>
     <script src="app.js"></script>
 </body>
