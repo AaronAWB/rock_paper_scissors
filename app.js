@@ -8,6 +8,9 @@ const playerScoreCounter = document.getElementById("player-score-count");
 const computerScoreCounter = document.getElementById("computer-score-count");
 const resultDisplay = document.getElementById("result-display");
 
+playerScoreCounter.textContent = playerScore;
+computerScoreCounter.textContent = computerScore;
+
 rockButton.addEventListener("click", function() {
     playGame("rock");
 });
