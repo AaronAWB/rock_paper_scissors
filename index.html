@@ -5,24 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class ="header-title">Rock, Paper, Scissors!</h1>
-    <p>Current score:</p>
-    <p>(User)<span id="player-score"></span> - <span id="computer-score"></span>(Computer)</p>
-    <div class="choices">
-        <div class="choice" id="rock-button">
-            <img src="images/rock.png">
+    <div class="main-container">
+        <h1 class ="header-title">Rock, Paper, Scissors!</h1>
+        <div class="results-container">
+            <div class="results">
+                <p class ="result" id="result-display"></p>
+            </div>
         </div>
-        <div class="choice" id="paper-button">
-            <img src="images/paper.png">
+        <div class="button-container">
+            <div class="game-choices">
+                <img src="images/rock.png" alt="rock icon" class="choice" id="rock-button">
+                <img src="images/paper.png" alt="paper icon" class ="choice" id="paper-button">
+                <img src="images/scissors.png" alt="scissors icon" class ="choice" id="scissors-button">
+            </div>
         </div>
-        <div class="choice" id="scissors-button">
-            <img src="images/scissors.png>">
+        <div class="player-score-container">
+            <p class="player-score">Player Wins | <span id="player-score-count"></span></p>
         </div>
-    </div>
-    <div class="results">
-        <p class ="result" id="result-display"></p>
+        <div class="computer-score-container">
+            <p class="computer-score"><span id="computer-score-count"></span> | Computer Wins</p>
+        </div>    
     </div>
     <script src="app.js"></script>
 </body>

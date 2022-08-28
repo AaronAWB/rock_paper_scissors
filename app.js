@@ -4,8 +4,8 @@ let computerScore = 0;
 const rockButton = document.getElementById("rock-button");
 const paperButton = document.getElementById("paper-button");
 const scissorsButton = document.getElementById("scissors-button");
-const playerScoreCounter = document.getElementById("player-score");
-const computerScoreCounter = document.getElementById("computer-score");
+const playerScoreCounter = document.getElementById("player-score-count");
+const computerScoreCounter = document.getElementById("computer-score-count");
 const resultDisplay = document.getElementById("result-display");
 
 rockButton.addEventListener("click", function() {
