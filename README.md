@@ -1,1 +1,9 @@
-# rock_paper_scissors
+# Rock, Paper, Scissors Game
+
+## Visit:
+
+## Summary
+
+## Author
+
+Aaron Brinckerhoff
