@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let roundNumber = 1;
 
 const rockButton = document.getElementById("rock-button");
 const paperButton = document.getElementById("paper-button");
@@ -10,6 +11,8 @@ const resultDisplay = document.getElementById("result-display");
 
 playerScoreCounter.textContent = playerScore;
 computerScoreCounter.textContent = computerScore;
+
+resultDisplay.textContent = `ROUND ${roundNumber}`;
 
 rockButton.addEventListener("click", function() {
     playGame("rock");
@@ -63,18 +66,26 @@ function playGame (playerChoice) {
 
 function win (computerChoice, playerChoice) {
     ++playerScore;
-    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. You WIN!`
-    playerScoreCounter.textContent = `${playerScore}`
+    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. You WIN!`;
+    playerScoreCounter.textContent = `${playerScore}`;
+    setTimeout(updateRoundNumber, 2000);
 }
 
 function lose (computerChoice, playerChoice) {
     ++computerScore;
-    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. You LOSE!`
-    computerScoreCounter.textContent = `${computerScore}`
+    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. You LOSE!`;
+    computerScoreCounter.textContent = `${computerScore}`;
+    setTimeout(updateRoundNumber, 2000);
 }
 
 function draw (computerChoice, playerChoice) {
-    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. It's a TIE!`
+    resultDisplay.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. It's a TIE!`;
+    setTimeout(updateRoundNumber, 2000);
+}
+
+function updateRoundNumber() {
+    ++roundNumber;
+    resultDisplay.textContent = `ROUND ${roundNumber}`;
 }
 
 
