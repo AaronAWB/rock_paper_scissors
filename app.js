@@ -2,29 +2,22 @@ let playerScore = 0;
 let computerScore = 0;
 let roundNumber = 1;
 
-const rockButton = document.getElementById("rock-button");
-const paperButton = document.getElementById("paper-button");
-const scissorsButton = document.getElementById("scissors-button");
 const playerScoreCounter = document.getElementById("player-score-count");
 const computerScoreCounter = document.getElementById("computer-score-count");
 const resultDisplay = document.getElementById("result-display");
+const gameButtons = document.querySelectorAll(".choice");
 
 playerScoreCounter.textContent = playerScore;
 computerScoreCounter.textContent = computerScore;
 
 resultDisplay.textContent = `ROUND ${roundNumber}`;
 
-rockButton.addEventListener("click", function() {
-    playGame("rock");
-});
-
-paperButton.addEventListener("click", function() {
-    playGame("paper");
-});
-
-scissorsButton.addEventListener("click", function() {
-    playGame("scissors");
-});
+gameButtons.forEach(function(button) {
+    const buttonName = button.getAttribute("name");
+    button.addEventListener("click", function() {
+        playGame(buttonName);
+    })
+})
 
 function getComputerChoice () {
     const choices = ["rock", "paper", "scissors"];
